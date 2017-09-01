@@ -1,9 +1,3 @@
-Caitlin Matuszak
-8/12/17
-CS5800 Algorithms
-Professor Or Beit Aharon
-Programming Assignment
-
 FINDING STRONGLY CONNECTED COMPONENTS
 I. Running the program 
 - on the command line run "java -jar path/to/CMatuszakProgrammingAssignment.jar input.txt"
@@ -11,6 +5,12 @@ I. Running the program
 - the program will accept two additional optional arguments, both booleans. You can pass in either true or false as the second argument to enable (or not) some output in the console regarding the timing of the different steps of the algorithm. You can also pass in either true or false as the third argument to enable (or not) running the recursive versions of DFS and MergeSort (see below for explanation). 
 - by default the timing output is turned off and the iterative versions of the algorithms will be run
 - the output file components.txt will be created/overwritten in the current directory
+- Format of the input file:
+	- must be a text file
+	- first line will have two numbers: the number of vertices and the number of edges separated by a space
+	- vertices are assumed to be named 1-n
+	- each line following will represent an edge - the first number is the "from" vertex and the second number is the "to" vertex, separated by a space
+	- see input.txt for an example
 
 For an example of the timing output and the performance of my program:
 When run on a randomly generated input file with 2 million vertices and 10 million edges:
