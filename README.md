@@ -2,7 +2,7 @@
 A program for finding the strongly connected components of a graph, employing the Depth First Search algorithm
 
 # FINDING STRONGLY CONNECTED COMPONENTS
-##I. Running the program 
+## I. Running the program 
 - on the command line run "java -jar path/to/CMatuszakProgrammingAssignment.jar input.txt"
 - the input file must be in the same directory that you are running this from
 - the program will accept two additional optional arguments, both booleans. You can pass in either true or false as the second argument to enable (or not) some output in the console regarding the timing of the different steps of the algorithm. You can also pass in either true or false as the third argument to enable (or not) running the recursive versions of DFS and MergeSort (see below for explanation). 
@@ -26,9 +26,9 @@ Finished finding strongly connected components.
 Total time: 29783
 (All times are in milliseconds)
 
-##II. Data structures implemented
+## II. Data structures implemented
 
-###1. MyArrayList
+### 1. MyArrayList
 - similar to java's ArrayList
 - list that uses internal array to store the elements
 - the size of the array starts either as a value passed into the constructor or a 
@@ -42,12 +42,12 @@ times. Overall, the complexity of adding n elements is the same as that of Java'
 ArrayList: O(n). (The math is similar to that of the proof of MakeHeap's complexity 
 in the slides).
 
-###2. Stack
+### 2. Stack
 - trivial to implement with the given MyArrayList implementation
 - first in, last out model	
 - adds no complexity on top of the MyArrayList it uses internally
 
-###3. Node
+### 3. Node
 - represents a single node/vertex in a graph
 - data:
 - an adjacency list of nodes that this node is connected to by an edge. For an edge 
@@ -74,7 +74,7 @@ two different nodes of the same name (will be enforced in the graph constructor)
 Not including the adjacency list in equality also allows for self-references 
 without introducing circular equality problems.
 
-###4. Graph
+### 4. Graph
 - represents a graph G = (V, E) as a MyArrayList of nodes 
 - the edges are taken care of by the node's adjacency lists
 - when constructing a graph, we pass in the number of nodes it will have and then
@@ -84,7 +84,7 @@ time due to the array list implementation - adding m edges from a node should t
 ake O(m))
 - Thus, constructing a graph G = (V, E) should take O(|V| + |E|) operations
 
-##III. Explanation of algorithms used
+## III. Explanation of algorithms used
 
 - Note: for both of these algorithms I implemented two versions, because I started
 by implementing the recursive version as detailed by the pseudocode in the slides,
@@ -93,9 +93,9 @@ version quickly exceeded the Java heap space with the call stack. An iterative
 version does not run into this problem. I have left both implementations there
 since I had already implemented the recursive version. 
 
-###1. DFS
+### 1. DFS
 
-####i. Iterative DFS
+#### i. Iterative DFS
 - we will keep track of the DFS components as we go and then return the DFS 
 components of this graph
 - initialize all nodes to WHITE, d=0, f=0 and parent=null as normal
@@ -127,13 +127,13 @@ O(|V|), and we iterate through all of the edges in the nodes in the stack:
 (O(2|E|): O(|V| + |E)
 - Total: O(|V| + |E|)
 
-####ii. Recursive DFS
+#### ii. Recursive DFS
 - modeled off of the pseudocode in the slides
 - O(|V| + |E|) as shown in the slides
 
-###2. MergeSort
+### 2. MergeSort
 
-####i. Iterative MergeSort
+#### i. Iterative MergeSort
 - Loop over the possible sizes of the subarrays that need to be merged. We start with 
 subarrays of size 1 and double each time until we eventually merge the last two subarrays 
 of approximately size n/2.
@@ -153,11 +153,11 @@ starting from size n and halving until we reach 1.
 element in a sorted position in the array.
 - O(nlog(n))
 
-####ii. Recursive MergeSort
+#### ii. Recursive MergeSort
 - modeled off of the pseudocode in the slides 
 - O(nlog(n)) as shown in the slides
 
-##IV. Explanation of the overall Strongly Connected Components algorithm
+## IV. Explanation of the overall Strongly Connected Components algorithm
 1. Construct a graph G corresponding to the given input file as described above.
 The program will throw an exception if the input file is not formatted according
 to the assignment instructions.
@@ -175,7 +175,7 @@ when choosing a new component, since if we have a choice of 2 edges from vertex 
 it doesn't matter which order we take them in, since they will be in the same DFS 
 component regardless.)
 
-##V. Overall Runtime Analysis
+## V. Overall Runtime Analysis
 1. O(|V| + |E|) 
 2. O(|V| + |E|)
 3. O(|V| + |E|)
